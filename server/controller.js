@@ -4,7 +4,8 @@ let tracks = [
     artist: 'Waylon Jennings',
     song: 'Good Hearted Woman',
     genre: 'Country',
-    rating: 3
+    rating: 3,
+    photo: 'http://images.45cat.com/waylon-jennings-good-hearted-woman-rca.jpg'
   },
   {
     id: 2,
@@ -137,13 +138,14 @@ module.exports = {
 
   addTracks: (req, res) => {
     const { artist, song, genre, rating } = req.body
-    console.log(req.body)
+    // console.log(req.body)
     let newTrack = {
       id, 
       artist,
       song,
       genre,
-      rating: 0
+      rating: 0,
+  
     }
     tracks.push(newTrack)
     id++
@@ -154,7 +156,6 @@ module.exports = {
     const {id} = req.params
     // const id = req.params.id
     let index= tracks.findIndex(tracks => tracks.id === +id)
-    
     if (index != -1){
       tracks.splice(index, 1)
     }
@@ -162,9 +163,13 @@ module.exports = {
   },
   update: (req, res) => {
     const { id } = req.params
+    // console.log(req.params)
+    const { rating } = req.body
     let index= tracks.findIndex(tracks => tracks.id === +id)
     if( index !== -1) {
-        tracks[index].rating = rating;
+        tracks[index].rating = rating
     }
+    res.send(tracks)
   }
 }
+

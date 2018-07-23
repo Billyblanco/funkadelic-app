@@ -17,9 +17,9 @@ handleChangeRating = (e) => {
 }
 
 updateRating = () => {
-  let { id } = this.props.track
+  const { id } = this.props.track
   const newRating = { 
-    rating: this.state.rating
+    "rating": this.state.rating
   }
   axios.put(`/api/tracks/${id}`, newRating).then(results => {
     this.props.update(results.data)
@@ -31,14 +31,18 @@ updateRating = () => {
     const { track } = this.props
     // console.log(this.props.track.artist)
     return (
-    <div>
+    <div className="songList">
        
-         <h4>Artist: {track.artist}</h4>
-        <p>Song: {track.song}</p>
+         <h4 className="artist">{track.artist}</h4>
+        <p>Song: "{track.song}"</p>
         <p>Genre: {track.genre}</p>
-        <input value={this.state.rating} onChange={this.handleChangeRating}/>
+        <div className="rating">
+        <p> Rating: {track.rating}/5 </p>
+        </div>
+        <input value={this.state.rating} onChange={this.handleChangeRating} placeholder="Change Rating"/>
+       <div className="updateButton">
       <button onClick={ () => {this.updateRating()}}></button>
-
+        </div>
   </div>
 
     );
