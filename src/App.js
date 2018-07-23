@@ -38,7 +38,7 @@ class App extends Component {
   updateTracks = (tracks) => {
     this.setState({ tracks })
   }
-  
+
   deleteTracks = (id) => {
     axios.delete(`/api/tracks/${id}`).then(results => {
       this.setState({ 
@@ -80,28 +80,27 @@ class App extends Component {
   if (this.state.tracks.length > 0) {
     tracksArray = this.state.tracks.map (track => {
         return (
-      <div className="master">
+    <div>
         {/* {console.log("track",track)} */}
         < Tracks track={ track } update={ this.updateTracks }/> 
         {/* <input onChange={this.handleRating}/> */}
         <DeleteButton deleteTracks={this.deleteTracks} id={track.id}/>
         {/* // <button onClick={ () => {this.deleteTracks(track.id)}}>DELETE TRACK</button> */}
-      </div> 
+        </div>
       )
     })
-
   }
     return (
       
       <div>
-    <h1 className="title"> Funkadelic </h1>
-    <input type="text" placeholder={"Artist"} value={this.state.artist} onChange={this.handleArtist}></input>
+    <h1 className="title"><strong>(UN)</strong>PlayList </h1>
+    
+    <div className="inputBar"> <input type="text" placeholder={"Artist"} value={this.state.artist} onChange={this.handleArtist}></input>
     <input type="text" placeholder={"Song"} value={this.state.song} onChange={this.handleSong}></input>
-    <input type="text" placeholder={"Genre"} value={this.state.genre} onChange={this.handleGenre}></input>
-    
-    
-    <Button addTracks = {this.addTracks}/>
-    {tracksArray}
+    <input type="text" placeholder={"Genre"} value={this.state.genre} onChange={this.handleGenre}></input> 
+   
+    <Button addTracks = {this.addTracks}/></div>
+    <div className="mainContainer"> {tracksArray} </div>
     
       </div>
     );

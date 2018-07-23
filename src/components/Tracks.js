@@ -34,14 +34,15 @@ updateRating = () => {
     <div className="songList">
        
          <h4 className="artist">{track.artist}</h4>
-        <p>Song: "{track.song}"</p>
+         <hr></hr>
+        <div className="songTitle"><p><strong>"{track.song}"</strong></p></div>
         <p>Genre: {track.genre}</p>
         <div className="rating">
         <p> Rating: {track.rating}/5 </p>
         </div>
-        <input value={this.state.rating} onChange={this.handleChangeRating} placeholder="Change Rating"/>
+        <input value={this.state.rating} onChange={this.handleChangeRating} className="inputNumber"/>
        <div className="updateButton">
-      <button onClick={ () => {this.updateRating()}}></button>
+      <button onClick={ () => {this.updateRating()}} className="rating"> CHANGE RATING </button>
         </div>
   </div>
 

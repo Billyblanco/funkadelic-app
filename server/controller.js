@@ -9,9 +9,9 @@ let tracks = [
   },
   {
     id: 2,
-    artist: 'Patsy Cline',
-    song: 'Crazy',
-    genre: 'Country',
+    artist: 'Louis Prima',
+    song: 'Just a Gigalo',
+    genre: 'Jazz',
     rating: 5
   },
   {
@@ -121,15 +121,78 @@ let tracks = [
   },
   {
     id: 18,
-    artist: 'Led Zeppelin',
+    artist: 'Technotronic',
+    song: 'Pump Up the Jam',
+    genre: 'Dance',
+    rating: 3
+  },
+  {
+    id: 19,
+    artist: 'Cameo',
+    song: 'Back and Forth',
+    genre: 'R&B',
+    rating: 1
+  },
+  {
+    id: 20,
+    artist: 'Funkadelic',
+    song: 'Maggot Brain',
+    genre: 'Funk',
+    rating: 5
+  },
+  {
+    id: 21,
+    artist: 'Earth, Wind & Fire',
     song: 'Houses Of The Holy',
-    genre: 'Rock',
+    genre: 'Funk',
+    rating: 2
+  },
+  {
+    id: 22,
+    artist: 'XXXTENTACION',
+    song: 'SAD!',
+    genre: 'Rap',
     rating: 4
+  },
+  {
+    id: 23,
+    artist: 'Sister Nancy',
+    song: 'Bam Bam',
+    genre: 'Reggae',
+    rating: 1
+  },
+  {
+    id: 24,
+    artist: 'The Velvet Underground',
+    song: 'Heroine',
+    genre: 'Alt & Punk',
+    rating: 4
+  },
+  {
+    id: 25,
+    artist: 'The Clash',
+    song: 'Police and Thieves',
+    genre: 'Punk',
+    rating: 5
+  },
+  {
+    id: 26,
+    artist: 'The Cramps',
+    song: 'Goo Goo Muck',
+    genre: 'Punk',
+    rating: 4
+  },
+  {
+    id: 27,
+    artist: 'Wintertime',
+    song: 'Away From Me',
+    genre: 'Rap',
+    rating: 3
   },
 ]
 
 
-let id = 19;
+let id = 28;
 
 module.exports = {
   getTracks: (req, res) => {
